@@ -1,8 +1,15 @@
-# General
+# dotfiles
 .gitignore
 .DS_Store
+
+# Directories
 .idea/
 cmake-build-debug/
+_submissions/
+
+# Course-Related files
+Archive.zip
+Web-CAT.pdf
 
 # Prerequisites
 *.d

@@ -1,12 +1,8 @@
-//
-// Created by Christopher Noel on 2/1/25.
-//
+// Copyright 2025
 
 #ifndef TESTTRIANGLE_H
 #define TESTTRIANGLE_H
 #include <cxxtest/TestSuite.h>
-//Include your classes header file(s) below and uncomment.
-//#include "myClass.h"
 #include "Triangle.h"
 
 class newCxxTest : public CxxTest::TestSuite {
@@ -20,7 +16,7 @@ public:
         Triangle triangle1;
         Triangle triangle2;
 
-        // TODO: Read and set base and height for triangle1 (use SetBase() and SetHeight())
+        // Read and set base and height for triangle1 (use SetBase() and SetHeight())
         double base = 5;
         double height = 6;
         triangle1.SetBase(base);
