@@ -33,6 +33,12 @@ void Car::CalcCurrentValue(int currentYear) {
     currentValue = purchasePrice * pow((1 - depreciationRate), carAge);
 }
 
+// Implement GetCurrentValue() function
+        // Test: CarTest::testCurrentValue
+int Car::GetCurrentValue() const {
+    return currentValue;
+}
+
 // Implement PrintInfo() function to output modelYear, purchasePrice, and currentValue
 
 void Car::PrintInfo() const {

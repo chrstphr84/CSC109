@@ -16,6 +16,7 @@ public:
     void SetPurchasePrice(int userPrice);
     int GetPurchasePrice() const;
     void CalcCurrentValue(int currentYear);
+    int GetCurrentValue() const;
     void PrintInfo() const;
 
 };
