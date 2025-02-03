@@ -1,39 +1,31 @@
-//
-// Created by Christopher Noel on 2/3/25.
-//
+// Copyright 2025
 
-#ifndef FOODITEM_H
-#define FOODITEM_H
+#ifndef FOODITEMH
+#define FOODITEMH
 
 #include <string>
 
-using namespace std;
 
 class FoodItem {
 public:
-    // TODO: Declare default constructor
+    // Default constructor declaration
+    FoodItem();
 
-    // TODO: Declare second constructor with parameters
-    // to initialize private data members
+    // constructor with parameters
+    FoodItem(std::string name, double fat, double carbs, double protein);
 
-    string GetName();
-
+    std::string GetName();
     double GetFat();
-
     double GetCarbs();
-
     double GetProtein();
-
     double GetCalories(double numServings);
-
     void PrintInfo();
 
 private:
-    string name;
+    std::string name;
     double fat;
     double carbs;
     double protein;
 };
 
-
-#endif //FOODITEM_H
+#endif
