@@ -21,10 +21,6 @@ void Team::SetLosses(int teamLosses) {
     losses = teamLosses;
 }
 
-
-// Accessor functions -
-//       GetName(), GetWins(), GetLosses()
-
 // Return the team name
 string Team::GetName() const {
     return name;
@@ -40,7 +36,6 @@ int Team::GetLosses() const {
     return losses;
 }
 
-
 // Calculate win percentage
 double Team::GetWinPercentage() const {
     double winPercentage = static_cast<double>(wins) / (wins + losses);
@@ -48,11 +43,12 @@ double Team::GetWinPercentage() const {
 }
 
 
-// Print results
-//  A team has a winning average if the win percentage is 0.5 or greater.
+// Print results of team standing
 void Team::PrintStanding() const {
+    // Print win percentage
     cout <<  "Win percentage: "  << fixed << setprecision(2) << GetWinPercentage() << endl;
-    //  Determine if team has a winning average: win percentage is 0.5 or greater.
+
+    //  A team has a winning average if the win percentage is 0.5 or greater.
     if (GetWinPercentage() >= 0.5) {
         cout << "Congratulations, Team " << name << " has a winning average!" << endl;
     }
