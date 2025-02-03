@@ -23,7 +23,21 @@ public:
         triangle1.SetHeight(height);
         triangle1.CalculateArea();
         TS_ASSERT_DELTA(triangle1.GetArea(), 15, 0.0000001);
-
     }
+
+    void testTriangle2() {
+        //Use TS_ASSERT_EQUALS(Result, ExpResult) to test your functions.
+        Triangle triangle1;
+        Triangle triangle2;
+
+        // Read and set base and height for triangle1 (use SetBase() and SetHeight())
+        double base = 7;
+        double height = 8;
+        triangle1.SetBase(base);
+        triangle1.SetHeight(height);
+        triangle1.CalculateArea();
+        TS_ASSERT_DELTA(triangle1.GetArea(), 28, 0.0000001);
+    }
+
 };
 #endif //TESTTRIANGLE_H
