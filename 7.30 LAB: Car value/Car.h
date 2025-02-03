@@ -1,31 +1,24 @@
 // Copyright 2025
 
-#ifndef CAR_VALUE_H
-#define CAR_VALUE_H
 
+#ifndef CAR_H
+#define CAR_H
 
 class Car {
 private:
     int modelYear;
-    // TODO: Declare purchasePrice member (int)
+    int purchasePrice;
     double currentValue;
 
 public:
     void SetModelYear(int userYear);
-
     int GetModelYear() const;
-
-    // TODO: Declare SetPurchasePrice() function
-
-    // TODO: Declare GetPurchasePrice() function
-
+    void SetPurchasePrice(int userPrice);
+    int GetPurchasePrice() const;
     void CalcCurrentValue(int currentYear);
-
-    // TODO: Declare PrintInfo() method to output modelYear, purchasePrice, and
-    // currentValue
+    void PrintInfo() const;
 
 };
 
 
-
-#endif //CAR_VALUE_H
+#endif //CAR_H
