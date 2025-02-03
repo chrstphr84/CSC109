@@ -8,33 +8,33 @@
 class newCxxTest : public CxxTest::TestSuite {
 public:
     Team team;
-    string teamName = "Ravens";
+    std::string teamName = "Ravens";
 
-    // test SetName and GetName functions
+    // test SetTeamName and GetTeamName functions
     void testTeamName() {
-        team.SetName(teamName);
-        TS_ASSERT_EQUALS(team.GetName(), teamName);
+        team.SetTeamName(teamName);
+        TS_ASSERT_EQUALS(team.GetTeamName(), teamName);
     }
 
-    // test SetWins and GetWins functions
+    // test SetTeamWins and GetTeamWins functions
     void testWins() {
         //Team team;
         int wins = 5;
-        team.SetWins(wins);
-        TS_ASSERT_EQUALS(team.GetWins(), wins);
+        team.SetTeamWins(wins);
+        TS_ASSERT_EQUALS(team.GetTeamWins(), wins);
     }
 
-    // test SetLosses and GetLosses functions
+    // test SetTeamLosses and GetTeamLosses functions
     void testLosses() {
         int losses = 6;
-        team.SetLosses(losses);
-        TS_ASSERT_EQUALS(team.GetLosses(), losses);
+        team.SetTeamLosses(losses);
+        TS_ASSERT_EQUALS(team.GetTeamLosses(), losses);
     }
 
     // test GetWinPercentage function
     void testWinPercentage() {
-        team.SetWins(80);
-        team.SetLosses(82);
+        team.SetTeamWins(80);
+        team.SetTeamLosses(82);
         TS_ASSERT_DELTA(team.GetWinPercentage(), 0.49, 0.01);
     }
 

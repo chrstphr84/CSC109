@@ -5,28 +5,26 @@
 
 #include <string>
 
-using namespace std;
+//using namespace std;
 
 class Team {
 
-
-    // TODO: Declare private data members - name, wins, losses
 private:
-    string name;
+    std::string name;
     int wins;
     int losses;
     //double winPercentage;
 
 public:
     // Mutator functions
-    void SetName(string name);
-    void SetWins(int wins);
-    void SetLosses(int losses);
+    void SetTeamName(std::string name);
+    void SetTeamWins(int wins);
+    void SetTeamLosses(int losses);
 
     // Accessor functions
-    string GetName() const;
-    int GetWins() const;
-    int GetLosses() const;
+    std::string GetTeamName() const;
+    int GetTeamWins() const;
+    int GetTeamLosses() const;
     double GetWinPercentage() const;
 
     void PrintStanding() const;
