@@ -4,28 +4,33 @@
 #include <iomanip>
 #include <cmath>
 #include "Car.h"
-using namespace std;
+//using namespace std;
 
+// Sets the model year of the car
         // Test: CarTest::testModelYear
-void Car::SetModelYear(int userYear){
+void Car::SetModelYear(int userYear) {
     modelYear = userYear;
 }
-        // Test: CarTest::testModelYear
+
+// Gets the model year of the car
+    // Test: CarTest::testModelYear
 int Car::GetModelYear() const {
     return modelYear;
 }
 
-// Implement SetPurchasePrice() function
+// Sets the purchase price of the car
         // Test: CarTest::testPurchasePrice
 void Car::SetPurchasePrice(int userPrice) {
     purchasePrice = userPrice;
 }
-// Implement GetPurchasePrice() function
+// Gets the purchase price of the car
         // Test: CarTest::testPurchasePrice
 int Car::GetPurchasePrice() const {
     return purchasePrice;
 }
 
+// Calculates the current value of the car
+        // Test: CarTest::testCurrentValue
 void Car::CalcCurrentValue(int currentYear) {
     double depreciationRate = 0.15;
     int carAge = currentYear - modelYear;
@@ -41,11 +46,11 @@ int Car::GetCurrentValue() const {
 
 // Implement PrintInfo() function to output modelYear, purchasePrice, and currentValue
 
-void Car::PrintInfo() const {
-    cout << fixed << setprecision(2);
-    cout << "Car's information:" << endl;
-    cout << "  Model year: " << modelYear << endl;
-    cout << "  Purchase price: $" << purchasePrice << endl;
-    cout << fixed << setprecision(0);
-    cout << "  Current value: $" << currentValue << endl;
-}
+// void Car::PrintInfo() const {
+//     std::cout << std::fixed << std::setprecision(2);
+//     std::cout << "Car's information:" << std::endl;
+//     std::cout << "  Model year: " << modelYear << std::endl;
+//     std::cout << "  Purchase price: $" << purchasePrice << std::endl;
+//     std::cout << std::fixed << std::setprecision(0);
+//     std::cout << "  Current value: $" << currentValue << std::endl;
+// }

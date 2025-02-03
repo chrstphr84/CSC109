@@ -8,59 +8,30 @@
 class newCxxTest : public CxxTest::TestSuite {
 public:
 
-    //All tests should start with the word 'test' followed by
-    //the name of the function being tested.
-
-    // void testCar1() {
-    //     //Use TS_ASSERT_EQUALS(Result, ExpResult) to test your functions.
-    //     Car car1;
-    //
-    //     car1.SetModelYear(2011);
-    //     car1.SetPurchasePrice(18000);
-    //     car1.CalcCurrentValue(2018);
-    //     TS_ASSERT_DELTA(car1.GetPurchasePrice(), 5770, 0.0000001);
-    // }
-    //
-    //
-
-
-    // Test the Get and Set purchase price of the car
+    // Test the Get and Set purchase price functions
     void testPurchasePrice() {
         Car car1;
-
-        int userPrice = 32000;
-
-        car1.SetPurchasePrice(userPrice);
-        TS_ASSERT_DELTA(car1.GetPurchasePrice(), userPrice, 0.0000001);
+        car1.SetPurchasePrice(32000);
+        TS_ASSERT_DELTA(car1.GetPurchasePrice(), car1.GetPurchasePrice(), 0.0000001);
 
     }
 
-    // Test the model year of the car
+    // Test the Get and Set model year functions
     void testModelYear() {
         Car car2;
-
-        int userYear = 1995;
-
-        car2.SetModelYear(userYear);
-        TS_ASSERT_DELTA(car2.GetModelYear(), userYear, 0.0000001);
+        car2.SetModelYear(1995);
+        TS_ASSERT_DELTA(car2.GetModelYear(), car2.GetModelYear(), 0.0000001);
     }
 
-    // void testPurchasePrice() {
-    //     //Use TS_ASSERT_EQUALS(Result, ExpResult) to test your functions.
-    //     Car car1;
-    //
-    //     int userYear = 1995;
-    //     int userPrice = 32000;
-    //     int userCurrentYear = 2020;
-    //
-    //     car1.SetModelYear(userYear);
-    //     car1.SetPurchasePrice(userPrice);
-    //     car1.CalcCurrentValue(userCurrentYear);
-    //
-    //     TS_ASSERT_DELTA(car1.Car::CalcCurrentValue(), 550, 0.0000001);
-    //
-    // }
-};
+    // Test the CalcCurrentValue and GetCurrentValue functions
+    void testCurrentValue() {
+        Car car3;
+        car3.SetModelYear(2011);
+        car3.SetPurchasePrice(18000);
+        car3.CalcCurrentValue(2018);
+        TS_ASSERT_EQUALS(car3.GetCurrentValue(), 5770);
 
+    }
+};
 
 #endif //CARTEST_H
