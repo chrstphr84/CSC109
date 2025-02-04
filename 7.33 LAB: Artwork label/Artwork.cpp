@@ -10,14 +10,14 @@ Artwork::Artwork() {
 }
 
 // Parameterized constructor
-Artwork::Artwork(string title, int yearCreated, Artist artist) {
+Artwork::Artwork(std::string title, int yearCreated, Artist artist) {
     this->title = title;
     this->yearCreated = yearCreated;
     this->artist = artist;
 }
 
 // Get the title of the artwork
-string Artwork::GetTitle() {
+std::string Artwork::GetTitle() {
     return title;
 }
 // Get the year the artwork was created
@@ -30,5 +30,5 @@ int Artwork::GetYearCreated() {
 void Artwork::PrintInfo()
 {
     artist.PrintInfo();
-    cout << "Title: " << title << ", " << yearCreated << endl;
+    std::cout << "Title: " << title << ", " << yearCreated << std::endl;
 }

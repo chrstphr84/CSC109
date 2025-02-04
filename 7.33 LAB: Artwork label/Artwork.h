@@ -3,20 +3,18 @@
 #ifndef ARTWORK_H
 #define ARTWORK_H
 
-
-
 #include "Artist.h"
 
 class Artwork{
 public:
     Artwork();
-    Artwork(string title, int yearCreated, Artist artist);
-    string GetTitle();
+    Artwork(std::string title, int yearCreated, Artist artist);
+    std::string GetTitle();
     int GetYearCreated();
     void PrintInfo();
 
 private:
-    string title;
+    std::string title;
     int yearCreated;
     Artist artist;
 

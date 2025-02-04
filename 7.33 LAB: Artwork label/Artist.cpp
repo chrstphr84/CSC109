@@ -3,7 +3,7 @@
 #include "Artist.h"
 #include <iostream>
 #include <string>
-using namespace std;
+
 
 // Default constructor
 Artist::Artist() {
@@ -13,14 +13,14 @@ Artist::Artist() {
 }
 
 // Parameterized constructor
-Artist::Artist(string artistName, int birthYear, int deathYear) {
+Artist::Artist(std::string artistName, int birthYear, int deathYear) {
     this->artistName = artistName;
     this->birthYear = birthYear;
     this->deathYear = deathYear;
 }
 
 // Get the name of the artist
-string Artist::GetName() const {
+std::string Artist::GetName() const {
     return artistName;
 }
 
@@ -37,18 +37,21 @@ int Artist::GetDeathYear() const {
 // Print the artist information
     // If the death year is -1, only print the birth year
     // If the death year is negative, print "present" instead of the death year
-void Artist::PrintInfo() const {
 
+
+void Artist::PrintInfo() const {
     if (birthYear >= 0) {
-        cout << "Artist: " << artistName << " (" << birthYear;
+        std::cout << "Artist: " << artistName << " (" << birthYear;
         if (deathYear >= 0) {
-            cout << " to " << deathYear << ")" << endl;
+            std::cout << " to " << deathYear << ")" << std::endl;
         }
-        else {
-            cout << " to present)" << endl;
+        else
+            {
+            std::cout << " to present)" << std::endl;
         }
     }
-    else {
-        cout << "Artist: " << artistName << " (unknown)" << endl;
+    else
+        {
+        std::cout << "Artist: " << artistName << " (unknown)" << std::endl;
     }
 };
