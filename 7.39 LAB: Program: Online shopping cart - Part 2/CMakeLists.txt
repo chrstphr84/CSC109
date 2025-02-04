@@ -3,4 +3,6 @@ project(7_39_LAB__Program__Online_shopping_cart___Part_2)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(7_39_LAB__Program__Online_shopping_cart___Part_2 main.cpp)
+add_executable(7_39_LAB__Program__Online_shopping_cart___Part_2 main.cpp
+        ItemToPurchase.cpp
+        ItemToPurchase.h)
