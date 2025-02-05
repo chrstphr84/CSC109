@@ -45,7 +45,7 @@ void ShoppingCart::AddItem(const ItemToPurchase item) {
 
 // Remove item from cart
 void ShoppingCart::RemoveItem(const std::string& itemName) {
-    for (int i = 0; i < cartItems.size(); i++) {
+    for (std::vector<ItemToPurchase>::size_type i = 0; i < cartItems.size(); i++) {
         if (cartItems[i].GetName() == itemName) {
             cartItems.erase(cartItems.begin() + i);
             return;
@@ -56,7 +56,7 @@ void ShoppingCart::RemoveItem(const std::string& itemName) {
 
 // Modify item in cart
 void ShoppingCart::ModifyItem(ItemToPurchase item) {
-    for (int i = 0; i < cartItems.size(); i++) {
+    for (std::vector<ItemToPurchase>::size_type i = 0; i < cartItems.size(); i++) {
         if (cartItems[i].GetName() == item.GetName()) {
             cartItems[i].SetQuantity(item.GetQuantity());
             cartItems[i].SetDescription(item.GetDescription());
@@ -68,17 +68,17 @@ void ShoppingCart::ModifyItem(ItemToPurchase item) {
 
 // Get the number of items in cart
 int ShoppingCart::GetNumItemsInCart() const {
-    int totalItems = 0;
-    for (int i = 0; i < cartItems.size(); i++) {
-        totalItems += cartItems[i].GetQuantity();
+    int totalQuantity = 0;
+    for (std::vector<ItemToPurchase>::size_type i = 0; i < cartItems.size(); i++) {
+        totalQuantity += cartItems[i].GetQuantity();
     }
-    return totalItems;
+    return totalQuantity;
 }
 
 // Get cost of items in cart
 int ShoppingCart::GetCostOfCart() const {
     int totalCost = 0;
-    for (int i = 0; i < cartItems.size(); i++) {
+    for (std::vector<ItemToPurchase>::size_type i = 0; i < cartItems.size(); i++) {
         totalCost += cartItems[i].GetPrice() * cartItems[i].GetQuantity();
     }
     return totalCost;
@@ -87,28 +87,30 @@ int ShoppingCart::GetCostOfCart() const {
 // Print total number of items and cost of cart
 void ShoppingCart::PrintTotal() const {
     std::cout << customerName << "'s Shopping Cart - " << currentDate << std::endl;
-    std::cout << "Number of Items: " << GetNumItemsInCart() << std::endl;
-    std::cout << std::endl;
-
-    if (GetNumItemsInCart() == 0) {
+    std::cout << "Number of Items: " << GetNumItemsInCart() << std::endl << std::endl;
+    if (cartItems.empty()) {
         std::cout << "SHOPPING CART IS EMPTY" << std::endl;
+        std::cout << std::endl;
+        std::cout << "Total: $0" << std::endl;
     } else {
-        for (int i = 0; i < cartItems.size(); i++) {
+        int totalCost = 0;
+        for (std::vector<ItemToPurchase>::size_type i = 0; i < cartItems.size(); i++) {
             cartItems[i].PrintItemCost();
+            totalCost += cartItems[i].GetPrice() * cartItems[i].GetQuantity();
         }
+        std::cout << "Total: $" << totalCost << std::endl;
     }
-    std::cout << std::endl;
-    std::cout << "Total: $" << GetCostOfCart() << std::endl;
 }
 
 // Print item descriptions
 void ShoppingCart::PrintDescriptions() const {
+    std::cout << customerName << "'s Shopping Cart - " << currentDate << std::endl;
     if (cartItems.empty()) {
         std::cout << "SHOPPING CART IS EMPTY" << std::endl;
     } else {
-        std::cout << customerName << "'s Shopping Cart - " << currentDate << std::endl;
+        //std::cout << customerName << "'s Shopping Cart - " << currentDate << std::endl;
         std::cout << "Item Descriptions" << std::endl;
-        for (int i = 0; i < cartItems.size(); i++) {
+        for (std::vector<ItemToPurchase>::size_type i = 0; i < cartItems.size(); i++) {
             cartItems[i].PrintItemDescription();
         }
     }
