@@ -96,15 +96,16 @@ void ShoppingCart::PrintTotal() const {
         int totalCost = 0;
         for (std::vector<ItemToPurchase>::size_type i = 0; i < cartItems.size(); i++) {
             cartItems[i].PrintItemCost();
-            totalCost += cartItems[i].GetPrice() * cartItems[i].GetQuantity();
+            totalCost += cartItems[i].GetPrice() * cartItems[i].GetQuantity() ;
         }
+        std::cout << std::endl;
         std::cout << "Total: $" << totalCost << std::endl;
     }
 }
 
 // Print item descriptions
 void ShoppingCart::PrintDescriptions() const {
-    std::cout << customerName << "'s Shopping Cart - " << currentDate << std::endl;
+    std::cout << customerName << "'s Shopping Cart - " << currentDate << std::endl << std::endl;
     if (cartItems.empty()) {
         std::cout << "SHOPPING CART IS EMPTY" << std::endl;
     } else {
