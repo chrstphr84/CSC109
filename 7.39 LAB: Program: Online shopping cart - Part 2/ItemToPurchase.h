@@ -8,7 +8,8 @@ class ItemToPurchase
 {
 public:
     ItemToPurchase();
-    //ItemToPurchase(std::string itemName, std::string description, int itemPrice, int itemQuantity);
+    ItemToPurchase(std::string name, std::string description, int price, int quantity);
+
     void SetName(std::string itemName);
     void SetPrice(int itemPrice);
     void SetQuantity(int itemQuantity);
@@ -16,11 +17,12 @@ public:
 
     std::string GetName() const;
     std::string GetDescription() const;
-    std::string PrintItemDescription() const;
+
+
     int GetPrice() const;
     int GetQuantity() const;
-    int PrintItemCost() const;
-
+    void PrintItemCost() const;
+    void PrintItemDescription() const;
 
 
 private:
