@@ -37,6 +37,10 @@ void ShoppingCart::SetDate(std::string date) {
 std::string ShoppingCart::GetDate() const {
     return currentDate;
 }
+// clear cart - for testing purposes
+// void ShoppingCart::ClearCart() {
+//     cartItems.clear();
+// }
 
 // Add item to cart
 void ShoppingCart::AddItem(const ItemToPurchase item) {
@@ -96,7 +100,7 @@ void ShoppingCart::PrintTotal() const {
         int totalCost = 0;
         for (std::vector<ItemToPurchase>::size_type i = 0; i < cartItems.size(); i++) {
             cartItems[i].PrintItemCost();
-            totalCost += cartItems[i].GetPrice() * cartItems[i].GetQuantity() ;
+            totalCost += cartItems[i].GetPrice() * cartItems[i].GetQuantity();
         }
         std::cout << std::endl;
         std::cout << "Total: $" << totalCost << std::endl;

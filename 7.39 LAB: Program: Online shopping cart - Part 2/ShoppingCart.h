@@ -16,6 +16,8 @@ class ShoppingCart
         std::string GetCustomerName() const;
         std::string GetDate() const;
 
+        //void ClearCart(); // for testing purposes
+
         void AddItem(const ItemToPurchase item);
         void RemoveItem(const std::string& itemName);
         void ModifyItem(ItemToPurchase item);
