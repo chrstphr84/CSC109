@@ -11,6 +11,13 @@ ItemToPurchase::ItemToPurchase() {
     itemQuantity = 0;
 }
 
+ItemToPurchase::ItemToPurchase(std::string name, std::string description, int price, int quantity) {
+    itemName = name;
+    itemDescription = description;
+    itemPrice = price;
+    itemQuantity = quantity;
+}
+
 // Mutators
 // Set item name
 void ItemToPurchase::SetName(std::string itemName) {
@@ -50,10 +57,10 @@ std::string ItemToPurchase::GetDescription() const {
 }
 
 // Print item description
-std::string ItemToPurchase::PrintItemDescription() const {
-    std::cout << itemName << ": " << itemDescription << ", " << itemPrice << " oz." << std::endl;
-}
+void ItemToPurchase::PrintItemDescription() const {
+    std::cout << itemName << ": " << itemDescription << std::endl;}
+
 // Print item cost
-int ItemToPurchase::PrintItemCost() const {
+void ItemToPurchase::PrintItemCost() const {
     std::cout << itemName << " " << itemQuantity << " @ $" << itemPrice << " = $" << (itemPrice * itemQuantity) << std::endl;
 }
