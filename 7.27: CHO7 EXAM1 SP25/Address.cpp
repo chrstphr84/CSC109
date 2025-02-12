@@ -4,117 +4,86 @@
 #include <string>
 #include "Address.h"
 
-// default constructor
-Address::Address()
-{
-    house_number = 0;
-    apartment_number = 0;
-    street = "";
-    city = "";
-    state = "";
-    postal_code = "";
-}
+#include "Address.h"
 
-// constructor with apartment number
+// Default constructor
+Address::Address() : house_number(0), apartment_number(0), street(""), city(""), state(""), postal_code("") {}
+
+// Parameterized constructor
 Address::Address(int house_number, std::string street, int apartment_number, std::string city, std::string state, std::string postal_code)
-{
-    this->house_number = house_number;
-    this->apartment_number = apartment_number;
-    this->street = street;
-    this->city = city;
-    this->state = state;
-    this->postal_code = postal_code;
-}
+    : house_number(house_number), apartment_number(apartment_number), street(street), city(city), state(state), postal_code(postal_code) {}
 
-// constructor without apartment number
+// Parameterized constructor without apartment number
 Address::Address(int house_number, std::string street, std::string city, std::string state, std::string postal_code)
-{
-    this->house_number = house_number;
-    this->apartment_number = 0;
-    this->street = street;
-    this->city = city;
-    this->state = state;
-    this->postal_code = postal_code;
-}
+    : house_number(house_number), apartment_number(0), street(street), city(city), state(state), postal_code(postal_code) {}
 
-// set/get house number
-void setHouseNumber(int house_number)
-{
+// Setters and getters
+void Address::setHouseNumber(int house_number) {
     this->house_number = house_number;
 }
 
-int Address::getHouseNumber()
-{
+int Address::getHouseNumber() {
     return house_number;
 }
-// set/get apartment number
-void setApartmentNumber(int apartment_number)
-{
+
+void Address::setApartmentNumber(int apartment_number) {
     this->apartment_number = apartment_number;
 }
 
-int getApartmentNumber()
-{
+int Address::getApartmentNumber() {
     return apartment_number;
 }
 
-// set/get street
-void setStreet(std::string street)
-{
+void Address::setStreet(std::string street) {
     this->street = street;
 }
-string getStreet()
-{
+
+std::string Address::getStreet() {
     return street;
 }
 
-// set/get city
-void setCity(std::string city)
-{
+void Address::setCity(std::string city) {
     this->city = city;
 }
 
-string getCity()
-{
+std::string Address::getCity() {
     return city;
 }
 
-// set/get state
-void setState(std::string state)
-{
+void Address::setState(std::string state) {
     this->state = state;
 }
 
-string getState()
-{
+std::string Address::getState() {
     return state;
 }
 
-// set/get postal code
-void setPostalCode(std::string postal_code)
-{
+void Address::setPostalCode(std::string postal_code) {
     this->postal_code = postal_code;
 }
 
-string getPostalCode()
-{
+std::string Address::getPostalCode() {
     return postal_code;
 }
 
-// print function
-void Address::print()
-{
-    std::cout << house_number << " " << street;
-    if (apartment_number != 0)
-    {
-        std::cout << ", #" << apartment_number;
+// print
+void Address::print() {
+    std::cout << house_number;
+    if (apartment_number != 0) {
+        std::cout << " " << street << ", #" << apartment_number << std::endl;
     }
-    std::cout << std::endl;
+    else
+    {
+        std::cout << " " << street << std::endl;
+    }
     std::cout << city << ", " << state << ", " << postal_code << std::endl;
+
 }
 
-// less than operator
-bool Address::operator<(const Address &address)
-{
-    return postal_code < address.postal_code;
+// operator overloading
+bool Address::operator<(const Address &address) {
+    if (postal_code < address.postal_code) {
+        return true;
+    }
+    return false;
 }

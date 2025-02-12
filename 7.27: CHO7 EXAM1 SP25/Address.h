@@ -38,6 +38,9 @@ public:
 
     void setPostalCode(std::string postal_code);
     std::string getPostalCode();
+
+    void print();
+    bool operator<(const Address &address);
 };
 
 #endif // ADDRESS_H
