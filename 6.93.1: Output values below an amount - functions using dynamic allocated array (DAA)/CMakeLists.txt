@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.30)
+project(6_93_1__Output_values_below_an_amount___functions_using_dynamic_allocated_array__DAA_)
+
+set(CMAKE_CXX_STANDARD 20)
+
+add_executable(6_93_1__Output_values_below_an_amount___functions_using_dynamic_allocated_array__DAA_ main.cpp)
