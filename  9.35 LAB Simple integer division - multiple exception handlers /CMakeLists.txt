@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.30)
+project(_9_35_LAB_Simple_integer_division___multiple_exception_handlers_)
+
+set(CMAKE_CXX_STANDARD 20)
+
+add_executable(_9_35_LAB_Simple_integer_division___multiple_exception_handlers_ main.cpp)
